@@ -15,8 +15,8 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA.
- */
-/*
+ *
+ *
  * Author: ncardwell@google.com (Neal Cardwell)
  *
  * Interface for a module to execute a system call from a test script.

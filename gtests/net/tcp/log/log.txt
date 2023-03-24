@@ -1,0 +1,40 @@
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/24 15:57:47
+Begin : 1679644667.933701
+socket syscall picked : 1679644668.045463
+first command init : 1679644668.045734
+socket syscall received : 1679644668.046192
+socket syscall : 1679644668.051652
+setsockopt syscall picked : 1679644668.051877
+setsockopt syscall : 1679644668.052071
+bind syscall picked : 1679644668.052291
+bind syscall recieved : 1679644668.052454
+bind syscall : 1679644668.071875
+listen syscall picked : 1679644668.072182
+listen syscall received : 1679644668.072343
+listen syscall : 1679644668.091747
+accept syscall picked : 1679644668.091999
+accept call received : 1679644668.092382
+packet picked : 1679644668.092679
+inbound injected packet : 1679644668.197682
+Packet result processing done : 1679644668.198028
+packet picked : 1679644668.198425
+Packet netdev received called : 1679644668.198704
+Packet received : 1679644668.198895
+outbound sniffed packet : 1679644668.217119
+Packet processing begin : 1679644668.217378
+Packet result processing done : 1679644668.217747
+packet picked : 1679644668.217988
+inbound injected packet : 1679644668.318301
+Packet result processing done : 1679644668.318721
+packet picked : 1679644668.319022
+accept syscall : 1679644668.336916
+inbound injected packet : 1679644668.418612
+Packet result processing done : 1679644668.419079
+Packet netdev received called : 1679644668.419462
+Packet received : 1679644668.419644
+Packet netdev received called : 1679644668.436854
+Packet received : 1679644668.437120
+End : 1679644669.438068

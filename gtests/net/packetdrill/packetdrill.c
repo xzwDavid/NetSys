@@ -36,6 +36,7 @@
 #include "script.h"
 #include "system.h"
 #include "wire_server.h"
+#include "test.h"
 
 static void run_init_scripts(struct config *config)
 {
@@ -61,8 +62,13 @@ static void run_init_scripts(struct config *config)
 	free(scripts);
 }
 
+
+
 int main(int argc, char *argv[])
 {
+
+
+    printf("Starting Packetdrill v1");
 	struct config config;
 	set_default_config(&config);
 	/* Get command line options and list of test scripts. */
@@ -104,10 +110,12 @@ int main(int argc, char *argv[])
 		/* If --dry_run, then don't actually execute the script. */
 		if (config.dry_run)
 			continue;
-
+        LogTest(config.script_path);
+        Loginfo("Begin",NULL);
 		run_init_scripts(&config);
 		run_script(&config, &script);
 	}
-
-	return 0;
+    sleep(1);
+    Loginfo("End",NULL);
+    return 0;
 }

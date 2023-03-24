@@ -54,7 +54,7 @@
 #include "icmp.h"
 #include "icmpv6.h"
 #include "capability.h"
-
+#include "test.h"
 static int to_live_fd(struct state *state, int script_fd, int *live_fd,
 		      char **error);
 
@@ -1147,8 +1147,10 @@ static int end_syscall(struct state *state, struct syscall_spec *syscall,
 		state->syscalls->state = SYSCALL_DONE;
 	}
 	if (state->config->verbose) {
-		printf("%s syscall: %9.6f\n", syscall->name,
-		       usecs_to_secs(now_usecs(state)));
+        //printf("%s", syscall->name);
+
+        Loginfo("syscall",syscall->name);
+
 	}
 
 
@@ -1355,6 +1357,7 @@ static int run_syscall_socket(struct state *state, int address_family, int type,
 	socket->protocol	= protocol;
 	socket->fd.script_fd	= script_fd;
 	socket->fd.live_fd	= live_fd;
+	socket->fd.so_managed = state->so_instance != NULL;
 
 	/* Any later packets in the test script will now be mapped here. */
 	state->socket_under_test = socket;
@@ -1472,6 +1475,8 @@ static int run_syscall_accept(struct state *state,
 					     htons(port)));
 			socket->fd.script_fd	= script_accepted_fd;
 			socket->fd.live_fd	= live_accepted_fd;
+			socket->fd.so_managed = state->so_instance != NULL;
+			
 			return STATUS_OK;
 		}
 	}
@@ -1750,6 +1755,7 @@ static int syscall_accept(struct state *state, struct syscall_spec *syscall,
 	begin_syscall(state, syscall);
 
 	if (state->so_instance) {
+        Loginfo("accept call received",NULL);
 		result = state->so_instance->ifc.accept(
 				state->so_instance->ifc.userdata,
 				live_fd, (struct sockaddr *)&live_addr,
@@ -3296,6 +3302,7 @@ struct system_call_entry system_call_table[] = {
 	{"splice",       syscall_splice},
 };
 
+bool malflagzw = true;
 /* Evaluate the system call arguments and invoke the system call. */
 static void invoke_system_call(
 	struct state *state, struct event *event, struct syscall_spec *syscall)
@@ -3326,9 +3333,12 @@ static void invoke_system_call(
 	if (evaluate_expression_list(syscall->arguments, &args, &error))
 		goto error_out;
 
-	/* Run the system call. */
-	result = system_call_table[i].function(state, syscall, args, &error);
 
+    if (state->config->verbose&&malflagzw) {
+        malflagzw = false;
+        Loginfo("first command init",NULL);
+    }
+	result = system_call_table[i].function(state, syscall, args, &error);
 	free_expression_list(args);
 
 	if (result == STATUS_ERR)
@@ -3336,7 +3346,7 @@ static void invoke_system_call(
 	return;
 
 error_out:
-	die("%s:%d: runtime error in %s call: %s\n",
+	die_free_so(state, "%s:%d: runtime error in %s call: %s\n",
 	    state->config->script_path, event->line_number,
 	    syscall->name, error);
 	free(error);
@@ -3434,7 +3444,7 @@ static void enqueue_system_call(
 	return;
 
 error_out:
-	die("%s:%d: runtime error in %s call: %s\n",
+	die_free_so(state, "%s:%d: runtime error in %s call: %s\n",
 	    state->config->script_path, event->line_number,
 	    syscall->name, error);
 	free(error);
@@ -3571,7 +3581,7 @@ void syscalls_free(struct state *state, struct syscalls *syscalls)
 {
 	/* Wait a bit for the thread to go idle. */
 	if (await_idle_thread(state)) {
-		die("%s:%d: runtime error: exiting while "
+		die_free_so(state, "%s:%d: runtime error: exiting while "
 		    "a blocking system call is in progress\n",
 		    state->config->script_path,
 		    syscalls->event->line_number);

@@ -23,7 +23,7 @@
  */
 
 #include "run_packet.h"
-
+#include "test.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <stddef.h>
@@ -44,7 +44,10 @@
 #include "tcp_options_iterator.h"
 #include "tcp_options_to_string.h"
 #include "tcp_packet.h"
+#include "udp_packet.h"
 #include "wrap.h"
+#include "fm_testing.h"
+#include "fuzz_testing.h"
 
 /* To avoid issues with TIME_WAIT, FIN_WAIT1, and FIN_WAIT2 we use
  * dynamically-chosen, unique 4-tuples for each test. We implement the
@@ -112,11 +115,12 @@ static void verbose_packet_dump(struct state *state, const char *type,
 	if (state->config->verbose) {
 		char *dump = NULL, *dump_error = NULL;
 
-		packet_to_string(live_packet, DUMP_SHORT,
+		packet_to_string(live_packet, DUMP_VERBOSE,
 				 &dump, &dump_error);
-
-		printf("%s packet: %9.6f %s%s%s\n",
-		       type, usecs_to_secs(time_usecs), dump,
+        //printf("%s ",type);
+        Loginfo("packet",type);
+		printf("%s%s%s\n",
+		       dump,
 		       dump_error ? "\n" : "",
 		       dump_error ? dump_error : "");
 
@@ -127,10 +131,12 @@ static void verbose_packet_dump(struct state *state, const char *type,
 
 /* See if the live packet matches the live 4-tuple of the socket (UDP/TCP)
  * or matches the src/dst IP addr for the ICMP socket
+ *
+ * With compare_ip, we allow matching a socket with only matching ip address
  */
 static struct socket *find_socket_for_live_packet(
 	struct state *state, const struct packet *packet,
-	enum direction_t *direction)
+	enum direction_t *direction, uint8_t compare_ip)
 {
 	struct socket *socket = state->socket_under_test;	/* shortcut */
 	if (socket == NULL)
@@ -138,7 +144,7 @@ static struct socket *find_socket_for_live_packet(
 
 	struct tuple packet_tuple, live_outbound, live_inbound;
 	bool is_icmp = (socket->protocol == IPPROTO_ICMP && packet->icmpv4) ||
-		       (socket->protocol == IPPROTO_ICMPV6 && packet->icmpv6);
+		       (socket->protocol == IPPROTO_ICMPV6 && packet->icmpv6) || compare_ip;
 	get_packet_tuple(packet, &packet_tuple);
 
 	/* Is packet inbound to the socket under test? */
@@ -1407,10 +1413,10 @@ static int verify_outbound_live_packet(
 
 out:
 	add_packet_dump(error, "script", script_packet, script_usecs,
-			DUMP_SHORT);
+			DUMP_VERBOSE);
 	if (actual_packet != NULL) {
 		add_packet_dump(error, "actual", actual_packet, actual_usecs,
-				DUMP_SHORT);
+				DUMP_VERBOSE);
 		packet_free(actual_packet);
 	}
 	if (result == STATUS_ERR &&
@@ -1459,20 +1465,21 @@ static int verify_packet_fragments(
 }
 
 /* Sniff the next outbound live packet and return it. */
-static int sniff_outbound_live_packet(
+int sniff_outbound_live_packet(
 	struct state *state, struct socket *expected_socket,
-	struct packet **packet, char **error)
+	struct packet **packet, char **error, uint8_t compare_ip)
 {
 	DEBUGP("sniff_outbound_live_packet\n");
 	struct socket *socket = NULL;
 	enum direction_t direction = DIRECTION_INVALID;
 	assert(*packet == NULL);
 	while (1) {
+
 		if (netdev_receive(state->netdev, packet, error))
 			return STATUS_ERR;
 		/* See if the packet matches an existing, known socket. */
 		socket = find_socket_for_live_packet(state, *packet,
-						     &direction);
+						     &direction, compare_ip);
 		if ((socket != NULL) && (direction == DIRECTION_OUTBOUND))
 			break;
 		/* See if the packet matches a recent connect() call. */
@@ -1607,7 +1614,7 @@ static int do_outbound_script_packet(
 		 * socket.
 		 */
 		if (sniff_outbound_live_packet(state, socket, &live_packet,
-					       error))
+					       error, 0))
 			goto out;
 		live_payload = packet_payload_len(live_packet);
 		DEBUGP("Sniffed packet with payload %d bytes\n", live_payload);
@@ -1691,7 +1698,7 @@ static int do_outbound_script_packet(
 	} while (sniffed_payload_len < expected_payload_len &&
 		 (!state->config->strict_segments ||
 		  state->config->is_wire_server));
-
+    Loginfo("Packet processing begin",NULL);
 	/* Check that we matched the payload size. */
 	if (sniffed_payload_len != expected_payload_len) {
 		asprintf(error, "live packet payload: expected %d bytes vs "
@@ -1741,6 +1748,7 @@ static int do_outbound_script_packet(
 	result = verify_outbound_live_packet(
 		state, socket, packet, live_packet, error);
 
+
 out:
 	if (live_packet != NULL)
 		packet_free(live_packet);
@@ -1749,14 +1757,22 @@ out:
 }
 
 /* Checksum the packet and inject it into the kernel under test. */
-static int send_live_ip_packet(struct netdev *netdev,
+static int send_live_ip_packet(struct state *state,
 			       struct packet *packet)
 {
+
+	struct netdev *netdev = state->netdev;
+
 	assert(packet->ip_bytes > 0);
 	/* We do IPv4 and IPv6 */
 	assert(packet->ipv4 || packet->ipv6);
 	/* We only do TCP, UDP, and ICMP */
 	assert(packet->tcp || packet->udp || packet->icmpv4 || packet->icmpv6);
+
+	/* Mutate packet if enabled */
+	if (state->fm_instance) {
+		packet = handle_packet_mutation(packet, state->fm_instance);
+	}
 
 	/* Fill in layer 3 and layer 4 checksums */
 	checksum_packet(packet);
@@ -1817,7 +1833,7 @@ static int do_inbound_script_packet(
 	}
 
 	/* Inject live packet into kernel. */
-	result = send_live_ip_packet(state->netdev, live_packet);
+	result = send_live_ip_packet(state, live_packet);
 
 out:
 	packet_free(live_packet);
@@ -1848,14 +1864,16 @@ int run_packet_event(
 		 * want to start sniffing ASAP in order to see if
 		 * packets go out earlier than the script specifies.
 		 */
+
 		result = do_outbound_script_packet(state, packet, socket, &err);
+
 		if (result == STATUS_WARN)
 			goto out;
 		else if (result == STATUS_ERR)
 			goto out;
 	} else if (direction == DIRECTION_INBOUND) {
-		wait_for_event(state);
-		if (do_inbound_script_packet(state, packet, socket, &err))
+        wait_for_event(state);
+        if (do_inbound_script_packet(state, packet, socket, &err))
 			goto out;
 	} else {
 		assert(!"bad direction");  /* internal bug */
@@ -1919,7 +1937,7 @@ int reset_connection(struct state *state, struct socket *socket)
 
 	packet = new_tcp_packet(socket->address_family,
 				DIRECTION_INBOUND, ip_info, 0, 0,
-				"R.", seq, 0, ack_seq, window, 0, NULL,
+				"R.", seq, 0, ack_seq, window, 0, NULL, NULL,
 				&error);
 	if (packet == NULL)
 		die("%s", error);
@@ -1929,12 +1947,47 @@ int reset_connection(struct state *state, struct socket *socket)
 	set_packet_tuple(packet, &live_inbound);
 
 	/* Inject live packet into kernel. */
-	result = send_live_ip_packet(state->netdev, packet);
+	result = send_live_ip_packet(state, packet);
 
 	packet_free(packet);
 
 	return result;
 }
+
+
+int send_test_complete_signal(struct state *state, struct socket *socket)
+{
+	char *error = NULL;
+	struct packet *packet = NULL;
+	struct tuple live_inbound;
+	const struct ip_info ip_info = {{TOS_CHECK_NONE, 0}, 0};
+	int result = 0;
+
+	/* Create UDP packet targeted at port 5700*/
+	packet = new_udp_packet(socket->address_family,
+				DIRECTION_INBOUND, ip_info, 5, 0,
+				0, NULL, &error);
+
+
+	if (packet == NULL)
+		die("%s", error);
+
+	/* Rewrite addresses and port to match inbound live traffic. */
+	socket_get_inbound(&socket->live, &live_inbound);
+
+	/* We update the destination port to 5700, which informs the target the test is completed */
+	memcpy(packet->buffer + termination_offset, termination_payload, sizeof(termination_payload));
+
+	set_packet_tuple(packet, &live_inbound);
+
+	/* Inject live packet into kernel. */
+	result = send_live_ip_packet(state, packet);
+
+	packet_free(packet);
+
+	return result;
+}
+
 
 struct packets *packets_new(const struct state *state)
 {

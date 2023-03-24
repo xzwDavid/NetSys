@@ -25,11 +25,12 @@
 #include "so_testing.h"
 
 #include <dlfcn.h>
-
+#include "test.h"
 #include "logging.h"
 #include "netdev.h"
 #include "packetdrill.h"
 #include "run.h"
+#include "test.h"
 
 struct so_netdev {
 	struct netdev netdev;		/* "inherit" from netdev */
@@ -61,7 +62,7 @@ static int so_netdev_send(struct netdev *a_netdev, struct packet *packet)
 	assert(packet->tcp || packet->udp || packet->icmpv4 || packet->icmpv6);
 
 	return netdev->ifc->netdev_send(netdev->ifc->userdata,
-					packet_start(packet),
+					packet->buffer,
 					packet->ip_bytes);
 }
 
@@ -79,6 +80,7 @@ static int so_netdev_receive(struct netdev *a_netdev, struct packet **packet,
 		*packet = packet_new(PACKET_READ_BYTES);
 		in_bytes = (*packet)->buffer_bytes;
 
+        Loginfo("Packet netdev received called",NULL);
 		/* Sniff the next outbound packet from the stack under test. */
 		if (netdev->ifc->netdev_receive(netdev->ifc->userdata,
 						(*packet)->buffer, &in_bytes,

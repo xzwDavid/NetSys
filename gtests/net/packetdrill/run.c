@@ -49,7 +49,8 @@
 #include "system.h"
 #include "tcp.h"
 #include "tcp_options.h"
-
+#include "fm_testing.h"
+#include "test.h"
 /* MAX_SPIN_USECS is the maximum amount of time (in microseconds) to
  * spin waiting for an event. We sleep up until this many microseconds
  * before a script event. We get the best results on tickless
@@ -142,6 +143,9 @@ void state_free(struct state *state)
 	if (state->so_instance)
 		so_instance_free(state->so_instance);
 
+	if (state->fm_instance)
+		fm_instance_free(state->fm_instance);
+
 	run_unlock(state);
 	if (pthread_mutex_destroy(&state->mutex) != 0)
 		die_perror("pthread_mutex_destroy");
@@ -152,7 +156,14 @@ void state_free(struct state *state)
 
 s64 now_usecs(struct state *state)
 {
-	struct timeval tv;
+    struct timeval tv;
+    if(state == NULL){
+        if (gettimeofday(&tv, NULL) < 0)
+            die_perror("gettimeofday");
+        return timeval_to_usecs(&tv);
+    }
+
+
 	if (state->so_instance) {
 		if (state->so_instance->ifc.gettimeofday(
 			state->so_instance->ifc.userdata, &tv, NULL) < 0)
@@ -430,8 +441,12 @@ static void run_local_packet_event(struct state *state, struct event *event,
 		fprintf(stderr, "%s", error);
 		free(error);
 	} else if (result == STATUS_ERR) {
-		die("%s", error);
+
+		die_free_so(state, "%s", error);
+
 	}
+    Loginfo("Packet result processing done",NULL);
+
 }
 
 /* For more consistent timing, if there's more than one CPU on this
@@ -544,6 +559,7 @@ int run_cleanup_command(void)
 
 void run_script(struct config *config, struct script *script)
 {
+
 	char *error = NULL;
 	struct state *state = NULL;
 	struct netdev *netdev = NULL;
@@ -581,6 +597,11 @@ void run_script(struct config *config, struct script *script)
 		so_instance_init(state->so_instance, config, script, state);
 	}
 
+	if (config->fm_filename) {
+		state->fm_instance = fm_instance_new();
+		fm_instance_init(state->fm_instance, config);
+	}
+
 	init_cmd_exed = false;
 	if (script->init_command != NULL) {
 		if (safe_system(script->init_command->command_line,
@@ -602,7 +623,7 @@ void run_script(struct config *config, struct script *script)
 	if (state->wire_client != NULL)
 		wire_client_send_client_starting(state->wire_client);
 
-	while (1) {
+    while (1) {
 		if (get_next_event(state, &error))
 			die("%s", error);
 		event = state->event;
@@ -618,15 +639,26 @@ void run_script(struct config *config, struct script *script)
 		 */
 		adjust_relative_event_times(state, event);
 
+
+
 		switch (event->type) {
 		case PACKET_EVENT:
 			/* For wire clients, the server handles packets. */
 			if (!config->is_wire_client) {
+
+                if (state->config->verbose) {
+                    Loginfo("packet picked",NULL);
+
+                }
 				run_local_packet_event(state, event,
 						       event->event.packet);
 			}
 			break;
 		case SYSCALL_EVENT:
+                if (state->config->verbose) {
+                    //printf("%s ", event->event.syscall->name);
+                    Loginfo("syscall picked",event->event.syscall->name);
+                }
 			run_system_call_event(state, event,
 					      event->event.syscall);
 			break;
@@ -663,6 +695,7 @@ void run_script(struct config *config, struct script *script)
 	state_free(state);
 
 	DEBUGP("run_script: done running\n");
+
 }
 
 int parse_script_and_set_config(int argc, char *argv[],
