@@ -38,3 +38,755 @@ Packet received : 1679644668.419644
 Packet netdev received called : 1679644668.436854
 Packet received : 1679644668.437120
 End : 1679644669.438068
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:02:21
+Begin : 1679742141.337825
+socket syscall picked : 1679742141.546829
+first command init : 1679742141.547153
+socket syscall received : 1679742141.547748
+socket syscall : 1679742141.567135
+setsockopt syscall picked : 1679742141.567477
+setsockopt syscall : 1679742141.567795
+bind syscall picked : 1679742141.568039
+bind syscall recieved : 1679742141.568304
+bind syscall : 1679742141.587311
+listen syscall picked : 1679742141.587738
+listen syscall received : 1679742141.587940
+listen syscall : 1679742141.607108
+accept syscall picked : 1679742141.607440
+accept call received : 1679742141.607957
+packet picked : 1679742141.608099
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:03:03
+Begin : 1679742183.315311
+socket syscall picked : 1679742297.555120
+first command init : 1679742297.555371
+socket syscall received : 1679742297.555632
+socket syscall : 1679742297.573275
+setsockopt syscall picked : 1679742297.573617
+setsockopt syscall : 1679742297.573931
+bind syscall picked : 1679742297.574178
+bind syscall recieved : 1679742297.574340
+bind syscall : 1679742297.593200
+listen syscall picked : 1679742297.593613
+listen syscall received : 1679742297.593861
+listen syscall : 1679742297.613130
+accept syscall picked : 1679742297.613484
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:05:35
+Begin : 1679742335.262076
+socket syscall picked : 1679742345.195037
+first command init : 1679742345.195363
+socket syscall received : 1679742345.195802
+socket syscall : 1679742345.213121
+setsockopt syscall picked : 1679742345.213550
+setsockopt syscall : 1679742345.213807
+bind syscall picked : 1679742345.214079
+bind syscall recieved : 1679742345.214305
+bind syscall : 1679742345.233271
+listen syscall picked : 1679742345.233673
+listen syscall received : 1679742345.234049
+listen syscall : 1679742345.253139
+accept syscall picked : 1679742345.253456
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:05:55
+Begin : 1679742355.653127
+socket syscall picked : 1679742355.854783
+first command init : 1679742355.855128
+socket syscall received : 1679742355.855578
+socket syscall : 1679742355.873151
+setsockopt syscall picked : 1679742355.873526
+setsockopt syscall : 1679742355.873931
+bind syscall picked : 1679742355.874202
+bind syscall recieved : 1679742355.874525
+bind syscall : 1679742355.893367
+listen syscall picked : 1679742355.893714
+listen syscall received : 1679742355.893905
+listen syscall : 1679742355.913087
+accept syscall picked : 1679742355.913389
+accept call received : 1679742355.913914
+packet picked : 1679742355.913927
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:27:08
+Begin : 1679743628.458421
+socket syscall picked : 1679743628.666924
+first command init : 1679743628.667302
+socket syscall received : 1679743628.667789
+socket syscall : 1679743628.686521
+setsockopt syscall picked : 1679743628.687020
+setsockopt syscall : 1679743628.687298
+bind syscall picked : 1679743628.687540
+bind syscall recieved : 1679743628.687726
+bind syscall : 1679743628.706680
+listen syscall picked : 1679743628.707037
+listen syscall received : 1679743628.707219
+listen syscall : 1679743628.726433
+accept syscall picked : 1679743628.726869
+accept call received : 1679743628.727345
+packet picked : 1679743628.727735
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:31:58
+Begin : 1679743918.764697
+socket syscall picked : 1679743918.974801
+first command init : 1679743918.975136
+socket syscall received : 1679743918.975626
+socket syscall : 1679743941.777531
+setsockopt syscall picked : 1679743941.777881
+setsockopt syscall : 1679743941.778186
+bind syscall picked : 1679743941.778442
+bind syscall recieved : 1679743941.778680
+bind syscall : 1679743957.277514
+listen syscall picked : 1679743957.277904
+listen syscall received : 1679743957.278121
+listen syscall : 1679743957.937396
+accept syscall picked : 1679743957.937733
+accept call received : 1679743957.938141
+packet picked : 1679743957.938150
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:47:48
+Begin : 1679744868.252476
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:48:09
+Begin : 1679744889.090421
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:48:33
+Begin : 1679744913.875953
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:48:39
+Begin : 1679744919.601847
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:49:18
+Begin : 1679744958.769281
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:49:32
+Begin : 1679744972.875397
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:50:37
+Begin : 1679745037.297655
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:55:19
+Begin : 1679745319.426786
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:55:28
+Begin : 1679745328.743815
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:56:08
+Begin : 1679745368.835285
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 19:59:47
+Begin : 1679745587.507450
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:09:13
+Begin : 1679746153.887902
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:09:45
+Begin : 1679746185.058059
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:14:57
+Begin : 1679746497.196548
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:16:27
+Begin : 1679746587.513140
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:16:36
+Begin : 1679746596.073280
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:22:04
+Begin : 1679746924.857064
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:22:25
+Begin : 1679746945.357276
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/25 20:35:13
+Begin : 1679747713.099862
+socket syscall picked : 1679747713.214896
+first command init : 1679747713.215288
+socket syscall received : 1679747713.215780
+socket syscall : 1679747713.223519
+setsockopt syscall picked : 1679747713.223968
+setsockopt syscall : 1679747713.224217
+bind syscall picked : 1679747713.224453
+bind syscall recieved : 1679747713.224630
+bind syscall : 1679747713.243585
+listen syscall picked : 1679747713.244000
+listen syscall received : 1679747713.244192
+listen syscall : 1679747713.263442
+accept syscall picked : 1679747713.263738
+accept call received : 1679747713.264112
+packet picked : 1679747713.264134
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:20:36
+Begin : 1679815236.010103
+socket syscall picked : 1679815236.126448
+first command init : 1679815236.126800
+socket syscall received : 1679815236.127347
+socket syscall : 1679815236.128341
+setsockopt syscall picked : 1679815236.128575
+setsockopt syscall : 1679815236.128843
+bind syscall picked : 1679815236.129101
+bind syscall recieved : 1679815236.129285
+bind syscall : 1679815236.148474
+listen syscall picked : 1679815236.148779
+listen syscall received : 1679815236.149074
+listen syscall : 1679815236.168517
+accept syscall picked : 1679815236.168907
+accept call received : 1679815236.169408
+packet picked : 1679815236.169428
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:20:53
+Begin : 1679815253.885365
+socket syscall picked : 1679815254.006466
+first command init : 1679815254.006804
+socket syscall received : 1679815254.007221
+socket syscall : 1679815254.008394
+setsockopt syscall picked : 1679815254.008785
+setsockopt syscall : 1679815254.009106
+bind syscall picked : 1679815254.009432
+bind syscall recieved : 1679815254.009631
+bind syscall : 1679815254.028579
+listen syscall picked : 1679815254.028919
+listen syscall received : 1679815254.029204
+listen syscall : 1679815254.048437
+accept syscall picked : 1679815254.048808
+accept call received : 1679815254.049303
+packet picked : 1679815254.049342
+inbound injected packet : 1679815254.151186
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:28:10
+Begin : 1679815690.920923
+socket syscall picked : 1679815691.039406
+first command init : 1679815691.039719
+socket syscall received : 1679815691.040152
+socket syscall : 1679815691.057904
+setsockopt syscall picked : 1679815691.058284
+setsockopt syscall : 1679815691.058580
+bind syscall picked : 1679815691.058774
+bind syscall recieved : 1679815691.058932
+bind syscall : 1679815691.077972
+listen syscall picked : 1679815691.078350
+listen syscall received : 1679815691.078553
+listen syscall : 1679815691.097877
+accept syscall picked : 1679815691.098187
+accept call received : 1679815691.098612
+packet picked : 1679815691.098623
+inbound injected packet : 1679815691.204008
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:34:08
+Begin : 1679816048.442273
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:35:49
+Begin : 1679816149.817705
+socket syscall picked : 1679816149.926453
+first command init : 1679816149.926770
+socket syscall received : 1679816149.927374
+socket syscall : 1679816149.932512
+setsockopt syscall picked : 1679816149.932738
+setsockopt syscall : 1679816149.932981
+bind syscall picked : 1679816149.933275
+bind syscall recieved : 1679816149.933410
+bind syscall : 1679816149.952818
+listen syscall picked : 1679816149.953201
+listen syscall received : 1679816149.953453
+listen syscall : 1679816149.972709
+accept syscall picked : 1679816149.973053
+accept call received : 1679816149.973473
+packet picked : 1679816149.973713
+inbound injected packet : 1679816150.078892
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:35:58
+Begin : 1679816158.181397
+socket syscall picked : 1679816158.286683
+first command init : 1679816158.287134
+socket syscall received : 1679816158.287581
+socket syscall : 1679816158.292607
+setsockopt syscall picked : 1679816158.292903
+setsockopt syscall : 1679816158.293127
+bind syscall picked : 1679816158.293323
+bind syscall recieved : 1679816158.293482
+bind syscall : 1679816158.312739
+listen syscall picked : 1679816158.313065
+listen syscall received : 1679816158.313243
+listen syscall : 1679816158.332755
+accept syscall picked : 1679816158.333079
+packet picked : 1679816158.333539
+333514
+inbound injected packet : 1679816158.434050
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:36:51
+Begin : 1679816211.095134
+socket syscall picked : 1679816211.318458
+first command init : 1679816211.318763
+socket syscall received : 1679816211.319256
+socket syscall : 1679816211.332846
+setsockopt syscall picked : 1679816211.333307
+setsockopt syscall : 1679816211.333969
+bind syscall picked : 1679816211.334520
+bind syscall recieved : 1679816211.334903
+bind syscall : 1679816211.352860
+listen syscall picked : 1679816211.353248
+listen syscall received : 1679816211.353516
+listen syscall : 1679816211.372692
+accept syscall picked : 1679816211.373076
+accept call received : 1679816211.373512
+packet picked : 1679816211.373533
+inbound injected packet : 1679816211.478974
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:43:04
+Begin : 1679816584.902450
+socket syscall picked : 1679816585.058560
+first command init : 1679816585.058995
+socket syscall received : 1679816585.059518
+socket syscall : 1679816585.059901
+setsockopt syscall picked : 1679816585.060218
+setsockopt syscall : 1679816585.060481
+bind syscall picked : 1679816585.060766
+bind syscall recieved : 1679816585.060925
+bind syscall : 1679816585.061280
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:46:45
+Begin : 1679816805.537302
+socket syscall picked : 1679816805.666984
+first command init : 1679816805.667365
+socket syscall received : 1679816805.667743
+socket syscall : 1679816805.683805
+setsockopt syscall picked : 1679816805.684147
+setsockopt syscall : 1679816805.684438
+bind syscall picked : 1679816805.684674
+bind syscall recieved : 1679816805.684846
+bind syscall : 1679816805.703910
+listen syscall picked : 1679816805.704222
+listen syscall received : 1679816805.704407
+listen syscall : 1679816805.723909
+accept syscall picked : 1679816805.724252
+accept call received : 1679816805.724674
+packet picked : 1679816805.724687
+inbound injected packet : 1679816805.829006
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:47:26
+Begin : 1679816846.356476
+socket syscall picked : 1679816846.566434
+first command init : 1679816846.566737
+socket syscall received : 1679816846.567229
+socket syscall : 1679816846.583827
+setsockopt syscall picked : 1679816846.584130
+setsockopt syscall : 1679816846.584397
+bind syscall picked : 1679816846.584582
+bind syscall recieved : 1679816846.584751
+bind syscall : 1679816846.604008
+listen syscall picked : 1679816846.604387
+listen syscall received : 1679816846.604677
+listen syscall : 1679816846.623834
+accept syscall picked : 1679816846.624199
+accept call received : 1679816846.624612
+packet picked : 1679816846.624615
+inbound injected packet : 1679816846.725229
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:48:05
+Begin : 1679816885.577678
+socket syscall picked : 1679816885.786514
+first command init : 1679816885.786881
+socket syscall received : 1679816885.787318
+socket syscall : 1679816885.788645
+setsockopt syscall picked : 1679816885.788832
+setsockopt syscall : 1679816885.789009
+bind syscall picked : 1679816885.789176
+bind syscall recieved : 1679816885.789298
+bind syscall : 1679816885.808884
+listen syscall picked : 1679816885.809205
+listen syscall received : 1679816885.809420
+listen syscall : 1679816885.828916
+accept syscall picked : 1679816885.829396
+accept call received : 1679816885.829870
+packet picked : 1679816885.830171
+inbound injected packet : 1679816885.935306
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:48:53
+Begin : 1679816933.900054
+socket syscall picked : 1679816934.106439
+first command init : 1679816934.106753
+socket syscall received : 1679816934.107246
+socket syscall : 1679816934.111677
+setsockopt syscall picked : 1679816934.111892
+setsockopt syscall : 1679816934.112100
+bind syscall picked : 1679816934.112428
+bind syscall recieved : 1679816934.112596
+bind syscall : 1679816934.131885
+listen syscall picked : 1679816934.132184
+listen syscall received : 1679816934.132356
+listen syscall : 1679816934.151814
+accept syscall picked : 1679816934.152240
+packet picked : 1679816934.152726
+152701
+inbound injected packet : 1679816934.255283
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:52:50
+Begin : 1679817170.809185
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:52:56
+Begin : 1679817176.602245
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 15:55:41
+Begin : 1679817341.474517
+socket syscall picked : 1679817341.666469
+first command init : 1679817341.666751
+socket syscall received : 1679817341.667249
+socket syscall : 1679817341.668735
+setsockopt syscall picked : 1679817341.668961
+setsockopt syscall : 1679817341.669210
+bind syscall picked : 1679817341.669390
+bind syscall recieved : 1679817341.669542
+bind syscall : 1679817341.688811
+listen syscall picked : 1679817341.689220
+listen syscall received : 1679817341.689471
+listen syscall : 1679817341.708851
+accept syscall picked : 1679817341.709266
+accept call received : 1679817341.709719
+packet picked : 1679817341.709737
+inbound injected packet : 1679817341.815070
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:05:11
+Begin : 1679817911.599018
+socket syscall picked : 1679817911.806459
+first command init : 1679817911.806795
+socket syscall received : 1679817911.807288
+socket syscall : 1679817911.825354
+setsockopt syscall picked : 1679817911.825737
+setsockopt syscall : 1679817911.825933
+bind syscall picked : 1679817911.826239
+bind syscall recieved : 1679817911.826426
+bind syscall : 1679817911.845416
+listen syscall picked : 1679817911.845733
+listen syscall received : 1679817911.845936
+listen syscall : 1679817911.865245
+accept syscall picked : 1679817911.865528
+accept call received : 1679817911.865961
+packet picked : 1679817911.866241
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:06:04
+Begin : 1679817964.572766
+socket syscall picked : 1679817964.778459
+first command init : 1679817964.778744
+socket syscall received : 1679817964.779203
+socket syscall : 1679817966.434129
+setsockopt syscall picked : 1679817966.434535
+setsockopt syscall : 1679817966.435080
+bind syscall picked : 1679817966.435365
+bind syscall recieved : 1679817966.435580
+bind syscall : 1679817967.134358
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:06:29
+Begin : 1679817989.419647
+socket syscall picked : 1679817989.618391
+first command init : 1679817989.620420
+socket syscall received : 1679817989.620989
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:09:36
+Begin : 1679818176.935883
+socket syscall picked : 1679818177.146418
+first command init : 1679818177.146729
+socket syscall received : 1679818177.147248
+socket syscall : 1679818177.165370
+setsockopt syscall picked : 1679818177.165857
+setsockopt syscall : 1679818177.166122
+bind syscall picked : 1679818177.166435
+bind syscall recieved : 1679818177.166649
+bind syscall : 1679818177.185406
+listen syscall picked : 1679818177.185759
+listen syscall received : 1679818177.186013
+listen syscall : 1679818177.205280
+accept syscall picked : 1679818177.205655
+packet picked : 1679818177.206165
+206115
+inbound injected packet : 1679818177.311416
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:10:11
+Begin : 1679818211.768230
+socket syscall picked : 1679818211.966467
+first command init : 1679818211.966788
+socket syscall received : 1679818211.967371
+socket syscall : 1679818211.987316
+setsockopt syscall picked : 1679818211.987726
+setsockopt syscall : 1679818211.987945
+bind syscall picked : 1679818211.988138
+bind syscall recieved : 1679818211.988294
+bind syscall : 1679818212.007370
+listen syscall picked : 1679818212.007919
+listen syscall received : 1679818212.008184
+listen syscall : 1679818212.027337
+accept syscall picked : 1679818212.027720
+accept call received : 1679818212.028180
+packet picked : 1679818212.028192
+inbound injected packet : 1679818220.998525
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:11:03
+Begin : 1679818263.620390
+socket syscall picked : 1679818263.827264
+first command init : 1679818263.827561
+socket syscall received : 1679818263.828062
+socket syscall : 1679818263.845208
+setsockopt syscall picked : 1679818263.845516
+setsockopt syscall : 1679818263.845794
+bind syscall picked : 1679818263.846020
+bind syscall recieved : 1679818263.846240
+bind syscall : 1679818263.865341
+listen syscall picked : 1679818263.865758
+listen syscall received : 1679818263.865985
+listen syscall : 1679818263.885257
+accept syscall picked : 1679818263.885630
+packet picked : 1679818263.886120
+886108
+inbound injected packet : 1679818269.115877
+inbound injected packet : 1679818312.980957
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:25:03
+Begin : 1679819103.065630
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:25:37
+Begin : 1679819137.561402
+socket syscall picked : 1679819137.686494
+first command init : 1679819137.686759
+socket syscall received : 1679819137.687076
+socket syscall : 1679819137.689420
+setsockopt syscall picked : 1679819137.689638
+setsockopt syscall : 1679819137.689828
+bind syscall picked : 1679819137.689994
+bind syscall recieved : 1679819137.690164
+bind syscall : 1679819137.709570
+listen syscall picked : 1679819137.709878
+listen syscall received : 1679819137.710130
+listen syscall : 1679819137.729527
+accept syscall picked : 1679819137.729910
+packet picked : 1679819137.730398
+730385
+inbound injected packet : 1679819137.835785
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:38:22
+Begin : 1679819902.248311
+socket syscall picked : 1679819902.358524
+first command init : 1679819902.358846
+socket syscall received : 1679819902.359276
+socket syscall : 1679819902.379174
+setsockopt syscall picked : 1679819902.379520
+setsockopt syscall : 1679819902.379864
+bind syscall picked : 1679819902.380155
+bind syscall recieved : 1679819902.380405
+bind syscall : 1679819902.399106
+listen syscall picked : 1679819902.399523
+listen syscall received : 1679819902.399782
+listen syscall : 1679819902.419123
+accept syscall picked : 1679819902.419522
+accept call received : 1679819902.420004
+packet picked : 1679819902.420287
+inbound injected packet : 1679819902.521677
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:38:34
+Begin : 1679819914.835049
+socket syscall picked : 1679819914.958450
+first command init : 1679819914.958763
+socket syscall received : 1679819914.959334
+socket syscall : 1679819914.959949
+setsockopt syscall picked : 1679819914.960251
+setsockopt syscall : 1679819914.960582
+bind syscall picked : 1679819914.960902
+bind syscall recieved : 1679819914.961120
+bind syscall : 1679819914.980107
+listen syscall picked : 1679819914.980506
+listen syscall received : 1679819914.980723
+listen syscall : 1679819915.000035
+accept syscall picked : 1679819915.000369
+packet picked : 1679819915.000833
+000815
+inbound injected packet : 1679819915.106245
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:39:51
+Begin : 1679819991.853750
+socket syscall picked : 1679819992.066478
+first command init : 1679819992.066994
+socket syscall received : 1679819992.067476
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:53:00
+Begin : 1679820780.099437
+socket syscall picked : 1679820780.206450
+first command init : 1679820780.206751
+socket syscall received : 1679820780.207064
+socket syscall : 1679820780.213853
+setsockopt syscall picked : 1679820780.214205
+setsockopt syscall : 1679820780.214484
+bind syscall picked : 1679820780.214742
+bind syscall recieved : 1679820780.214922
+bind syscall : 1679820780.233999
+listen syscall picked : 1679820780.234438
+listen syscall received : 1679820780.234649
+listen syscall : 1679820780.253861
+accept syscall picked : 1679820780.254190
+packet picked : 1679820780.254639
+254622
+inbound injected packet : 1679820780.357759
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:55:34
+Begin : 1679820934.329195
+socket syscall picked : 1679820941.318626
+first command init : 1679820941.318913
+socket syscall received : 1679820941.319178
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 16:59:52
+Begin : 1679821192.236584
+socket syscall picked : 1679821192.446491
+first command init : 1679821192.446975
+socket syscall received : 1679821192.447410
+socket syscall : 1679821192.466445
+setsockopt syscall picked : 1679821192.466733
+setsockopt syscall : 1679821192.467012
+bind syscall picked : 1679821192.467249
+bind syscall recieved : 1679821192.467396
+bind syscall : 1679821192.486431
+listen syscall picked : 1679821192.486684
+listen syscall received : 1679821192.486873
+listen syscall : 1679821192.506412
+accept syscall picked : 1679821192.506708
+accept call received : 1679821192.507134
+packet picked : 1679821192.507146
+inbound injected packet : 1679821229.834093
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 17:01:52
+Begin : 1679821312.763768
+socket syscall picked : 1679821312.886435
+first command init : 1679821312.886853
+socket syscall received : 1679821312.887388
+socket syscall : 1679821312.891844
+setsockopt syscall picked : 1679821312.892214
+setsockopt syscall : 1679821312.892574
+bind syscall picked : 1679821312.892877
+bind syscall recieved : 1679821312.893108
+bind syscall : 1679821312.910418
+listen syscall picked : 1679821312.910768
+listen syscall received : 1679821312.910990
+listen syscall : 1679821312.930426
+accept syscall picked : 1679821312.930751
+accept call received : 1679821312.931159
+packet picked : 1679821312.931179
+inbound injected packet : 1679821313.032458
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/03/26 17:04:53
+Begin : 1679821493.018310
+socket syscall picked : 1679821497.026590
+first command init : 1679821497.026870
+socket syscall received : 1679821497.027365
+socket syscall : 1679821497.027806
+setsockopt syscall picked : 1679821497.028085
+setsockopt syscall : 1679821497.028385
+bind syscall picked : 1679821497.028748
+bind syscall recieved : 1679821497.028939
+bind syscall : 1679821497.029292
