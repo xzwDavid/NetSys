@@ -1147,7 +1147,7 @@ static int end_syscall(struct state *state, struct syscall_spec *syscall,
 		state->syscalls->state = SYSCALL_DONE;
 	}
 	if (state->config->verbose) {
-        //printf("%s", syscall->name);
+
 
         Loginfo("syscall",syscall->name);
 
