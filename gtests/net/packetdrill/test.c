@@ -25,8 +25,11 @@ extern void Loginfo(const char *s, ...){
     FILE *log = fopen(LOGPATH, "a+");
     if(arg1!=NULL)
         fprintf(log,"%s ", arg1);
-    fprintf(log,"%s : %9.6f\n",
-            s,usecs_to_secs(now_usecs(NULL)));
+    double num = usecs_to_secs(now_usecs(NULL));
+    int integer = (int)num;
+    int deci = (int)(1000000*(num-integer));
+    fprintf(log,"%s : %d.%d\n",
+            s,integer,deci);
     fclose(log);
     va_end(args);
 }
