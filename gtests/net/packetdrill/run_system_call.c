@@ -1146,12 +1146,6 @@ static int end_syscall(struct state *state, struct syscall_spec *syscall,
 		assert(state->syscalls->state == SYSCALL_RUNNING);
 		state->syscalls->state = SYSCALL_DONE;
 	}
-	if (state->config->verbose) {
-
-
-        Loginfo("syscall",syscall->name);
-
-	}
 
 
 	/* Compare actual vs expected return value */
@@ -1755,7 +1749,7 @@ static int syscall_accept(struct state *state, struct syscall_spec *syscall,
 	begin_syscall(state, syscall);
 
 	if (state->so_instance) {
-        Loginfo("accept call received",NULL);
+        //Loginfo("accept call received",NULL);
 		result = state->so_instance->ifc.accept(
 				state->so_instance->ifc.userdata,
 				live_fd, (struct sockaddr *)&live_addr,
@@ -3302,7 +3296,7 @@ struct system_call_entry system_call_table[] = {
 	{"splice",       syscall_splice},
 };
 
-bool malflagzw = true;
+
 /* Evaluate the system call arguments and invoke the system call. */
 static void invoke_system_call(
 	struct state *state, struct event *event, struct syscall_spec *syscall)
@@ -3334,11 +3328,10 @@ static void invoke_system_call(
 		goto error_out;
 
 
-    if (state->config->verbose&&malflagzw) {
-        malflagzw = false;
-        Loginfo("first command init",NULL);
-    }
+
+    Loginfo("syscall invoked",syscall->name);
 	result = system_call_table[i].function(state, syscall, args, &error);
+    Loginfo("syscall returned",syscall->name);
 	free_expression_list(args);
 
 	if (result == STATUS_ERR)

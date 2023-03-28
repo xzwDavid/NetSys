@@ -118,7 +118,7 @@ static void verbose_packet_dump(struct state *state, const char *type,
 		packet_to_string(live_packet, DUMP_VERBOSE,
 				 &dump, &dump_error);
         //printf("%s ",type);
-        Loginfo("packet",type);
+        //Loginfo("packet",type);
 		printf("%s%s%s\n",
 		       dump,
 		       dump_error ? "\n" : "",
@@ -1698,7 +1698,7 @@ static int do_outbound_script_packet(
 	} while (sniffed_payload_len < expected_payload_len &&
 		 (!state->config->strict_segments ||
 		  state->config->is_wire_server));
-    Loginfo("Packet processing begin",NULL);
+    //Loginfo("Packet processing begin",NULL);
 	/* Check that we matched the payload size. */
 	if (sniffed_payload_len != expected_payload_len) {
 		asprintf(error, "live packet payload: expected %d bytes vs "
@@ -1834,7 +1834,7 @@ static int do_inbound_script_packet(
 
 	/* Inject live packet into kernel. */
 	result = send_live_ip_packet(state, live_packet);
-
+    Loginfo("Packet send","done");
 out:
 	packet_free(live_packet);
 	return result;

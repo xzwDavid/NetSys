@@ -3,6 +3,9 @@
 
 
 #define LOGPATH "../tcp/log/log.txt"
+#define TIMESTAMPPATH "../tcp/log/timestamp.txt"
+
+extern void process();
 
 extern void LogTest(const char *s,...);
 

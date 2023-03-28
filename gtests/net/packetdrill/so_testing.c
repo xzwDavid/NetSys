@@ -80,7 +80,7 @@ static int so_netdev_receive(struct netdev *a_netdev, struct packet **packet,
 		*packet = packet_new(PACKET_READ_BYTES);
 		in_bytes = (*packet)->buffer_bytes;
 
-        Loginfo("Packet netdev received called",NULL);
+        Loginfo("Packet","net_dev called");
 		/* Sniff the next outbound packet from the stack under test. */
 		if (netdev->ifc->netdev_receive(netdev->ifc->userdata,
 						(*packet)->buffer, &in_bytes,

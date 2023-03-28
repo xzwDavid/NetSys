@@ -66,8 +66,6 @@ static void run_init_scripts(struct config *config)
 
 int main(int argc, char *argv[])
 {
-
-
     printf("Starting Packetdrill v1");
 	struct config config;
 	set_default_config(&config);
@@ -97,7 +95,7 @@ int main(int argc, char *argv[])
 		show_usage();
 		exit(EXIT_FAILURE);
 	}
-
+    bool turn = true;
 	/* Parse and run each script on the command line. */
 	for (; *arg != NULL; ++arg) {
 		struct script script;
@@ -111,11 +109,14 @@ int main(int argc, char *argv[])
 		if (config.dry_run)
 			continue;
         LogTest(config.script_path);
-        Loginfo("Begin",NULL);
+        if(turn) {
+            turn = false;
+            Loginfo("Begin", NULL);
+        }
 		run_init_scripts(&config);
 		run_script(&config, &script);
 	}
-    sleep(1);
     Loginfo("End",NULL);
+    process();
     return 0;
 }

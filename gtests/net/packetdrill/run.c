@@ -433,6 +433,7 @@ int get_next_event(struct state *state, char **error)
 static void run_local_packet_event(struct state *state, struct event *event,
 				   struct packet *packet)
 {
+    //Loginfo("run_packet",NULL);
 	char *error = NULL;
 	int result = STATUS_OK;
 
@@ -445,7 +446,7 @@ static void run_local_packet_event(struct state *state, struct event *event,
 		die_free_so(state, "%s", error);
 
 	}
-    Loginfo("Packet result processing done",NULL);
+    //Loginfo("Packet result processing done",NULL);
 
 }
 
@@ -643,6 +644,7 @@ void run_script(struct config *config, struct script *script)
 
 		switch (event->type) {
 		case PACKET_EVENT:
+            Loginfo("packet","next event");
 			/* For wire clients, the server handles packets. */
 			if (!config->is_wire_client) {
 
@@ -655,18 +657,20 @@ void run_script(struct config *config, struct script *script)
 			}
 			break;
 		case SYSCALL_EVENT:
+                Loginfo("syscall","next event");
                 if (state->config->verbose) {
-                    //printf("%s ", event->event.syscall->name);
                     Loginfo("syscall picked",event->event.syscall->name);
                 }
 			run_system_call_event(state, event,
 					      event->event.syscall);
 			break;
 		case COMMAND_EVENT:
+            Loginfo("command","next event");
 			run_command_event(state, event,
 					  event->event.command);
 			break;
 		case CODE_EVENT:
+            Loginfo("code","next event");
 			run_code_event(state, event,
 				       event->event.code->text);
 			break;
@@ -678,6 +682,7 @@ void run_script(struct config *config, struct script *script)
 		}
 		state->num_events++;
 	}
+    Loginfo("script end",NULL);
 
 	/* Wait for any outstanding packet events we requested on the server. */
 	if (state->wire_client != NULL)
