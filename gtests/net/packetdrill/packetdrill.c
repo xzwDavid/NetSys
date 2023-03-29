@@ -108,6 +108,8 @@ int main(int argc, char *argv[])
 		/* If --dry_run, then don't actually execute the script. */
 		if (config.dry_run)
 			continue;
+        if(config.verbose)
+            setVerbose(1);
         LogTest(config.script_path);
         if(turn) {
             turn = false;
@@ -116,7 +118,9 @@ int main(int argc, char *argv[])
 		run_init_scripts(&config);
 		run_script(&config, &script);
 	}
-    Loginfo("End",NULL);
-    process();
+    if(config.verbose){
+        Loginfo("End",NULL);
+        process();
+    }
     return 0;
 }

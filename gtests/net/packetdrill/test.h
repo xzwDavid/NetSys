@@ -5,10 +5,13 @@
 #define LOGPATH "../tcp/log/log.txt"
 #define TIMESTAMPPATH "../tcp/log/timestamp.txt"
 
+
 extern void process();
 
 extern void LogTest(const char *s,...);
 
 extern void Loginfo(const char *s, ...);
+
+extern void setVerbose(int);
 
 #endif

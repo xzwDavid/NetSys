@@ -32,34 +32,42 @@ int index1 = 0,index2 = 0,index3 = 0;
 double time_begin,time_end;
 double time_picked,time_first,time_done;
 
+int Verbose=0;
 
+extern void setVerbose(int verbose){
+    Verbose = verbose;
+}
 
 
 extern void LogTest(const char*s, ...){
-    time_t now = time(NULL);
-    FILE *log = fopen(TIMESTAMPPATH, "a+");
-    struct tm *t = localtime(&now);
-    fprintf(log,"\n\n\nThis scrip %s run at the time: %04d/%02d/%02d %02d:%02d:%02d\n",s,
-           t->tm_year + 1900, t->tm_mon + 1, t->tm_mday,
-           t->tm_hour, t->tm_min, t->tm_sec);
-    fclose(log);
+    if(Verbose){
+        time_t now = time(NULL);
+        FILE *log = fopen(TIMESTAMPPATH, "a+");
+        struct tm *t = localtime(&now);
+        fprintf(log,"\n\n\nThis scrip %s run at the time: %04d/%02d/%02d %02d:%02d:%02d\n",s,
+                t->tm_year + 1900, t->tm_mon + 1, t->tm_mday,
+                t->tm_hour, t->tm_min, t->tm_sec);
+        fclose(log);
+    }
 }
 
 
 extern void Loginfo(const char *s, ...){
-    va_list args;
-    va_start(args,s);
-    char* arg1 = va_arg(args, char*);
-    FILE *log = fopen(TIMESTAMPPATH, "a+");
-    if(arg1!=NULL)
-        fprintf(log,"%s ", arg1);
-    double num = usecs_to_secs(now_usecs(NULL));
-    int integer = (int)num;
-    int deci = (int)(1000000*(num-integer));
-    fprintf(log,"%s : %d.%d\n",
-            s,integer,deci);
-    fclose(log);
-    va_end(args);
+    if(Verbose){
+        va_list args;
+        va_start(args,s);
+        char* arg1 = va_arg(args, char*);
+        FILE *log = fopen(TIMESTAMPPATH, "a+");
+        if(arg1!=NULL)
+            fprintf(log,"%s ", arg1);
+        double num = usecs_to_secs(now_usecs(NULL));
+        int integer = (int)num;
+        int deci = (int)(1000000*(num-integer));
+        fprintf(log,"%s : %d.%d\n",
+                s,integer,deci);
+        fclose(log);
+        va_end(args);
+    }
 }
 
 extern void writeLog(){
