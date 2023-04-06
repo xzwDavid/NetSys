@@ -1,6 +1,6 @@
 all: binaries
 
-CFLAGS = -g -Wall -Werror
+CFLAGS = -g -Wall -Werror -Wno-unused-result -Wno-stringop-truncation -Wno-int-to-pointer-cast
 
 parser.o: parser.y
 	bison --output=parser.c --defines=parser.h --report=state parser.y
@@ -30,6 +30,7 @@ packetdrill-lib := \
          wire_client.o wire_client_netdev.o \
          wire_server.o wire_server_netdev.o \
 	 epoll.o pipe.o file.o so_testing.o wrap.o fuzz_options.o fm_testing.o test.o
+
 
 packetdrill-objs := packetdrill.o $(packetdrill-lib)
 

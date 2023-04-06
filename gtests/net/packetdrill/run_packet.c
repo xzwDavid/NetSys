@@ -131,7 +131,7 @@ static void verbose_packet_dump(struct state *state, const char *type,
 
 /* See if the live packet matches the live 4-tuple of the socket (UDP/TCP)
  * or matches the src/dst IP addr for the ICMP socket
- *
+
  * With compare_ip, we allow matching a socket with only matching ip address
  */
 static struct socket *find_socket_for_live_packet(
@@ -1834,7 +1834,9 @@ static int do_inbound_script_packet(
 
 	/* Inject live packet into kernel. */
 	result = send_live_ip_packet(state, live_packet);
+
     Loginfo("Packet send","done");
+
 out:
 	packet_free(live_packet);
 	return result;
