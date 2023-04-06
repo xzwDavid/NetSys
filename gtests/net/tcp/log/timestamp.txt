@@ -290,3 +290,53 @@ next event syscall : 1680621958.266179
 read syscall picked : 1680621958.266719
 read syscall invoked : 1680621958.266978
 read syscall returned : 1680621958.492145
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/06 13:35:10
+Begin : 1680759310.845240
+next event syscall : 1680759310.952634
+socket syscall picked : 1680759310.952967
+socket syscall invoked : 1680759310.953531
+socket syscall returned : 1680759310.954262
+next event syscall : 1680759310.954487
+setsockopt syscall picked : 1680759310.954735
+setsockopt syscall invoked : 1680759310.954925
+setsockopt syscall returned : 1680759310.955148
+next event syscall : 1680759310.955324
+bind syscall picked : 1680759310.955497
+bind syscall invoked : 1680759310.955662
+bind syscall returned : 1680759310.956003
+next event syscall : 1680759310.956183
+listen syscall picked : 1680759310.956403
+listen syscall invoked : 1680759310.956587
+listen syscall returned : 1680759310.956917
+next event syscall : 1680759310.957094
+accept syscall picked : 1680759310.957267
+accept syscall invoked : 1680759310.957633
+next event packet : 1680759310.957837
+packet picked : 1680759310.958020
+done Packet send : 1680759311.59504
+next event packet : 1680759311.59861
+packet picked : 1680759311.60342
+net_dev called Packet : 1680759311.60676
+net_dev called Packet : 1680759311.60919
+net_dev called Packet : 1680759311.61151
+next event packet : 1680759311.264755
+packet picked : 1680759311.265271
+done Packet send : 1680759311.367376
+next event syscall : 1680759311.367964
+write syscall picked : 1680759311.368504
+accept syscall returned : 1680759311.961463
+write syscall invoked : 1680759311.962601
+write syscall returned : 1680759311.964423
+next event packet : 1680759311.964947
+packet picked : 1680759311.965425
+net_dev called Packet : 1680759311.966244
+next event packet : 1680759311.966994
+packet picked : 1680759311.967242
+done Packet send : 1680759312.75978
+next event syscall : 1680759312.76318
+read syscall picked : 1680759312.76843
+read syscall invoked : 1680759312.77060
+read syscall returned : 1680759312.242633
