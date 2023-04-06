@@ -1,0 +1,60 @@
+1.Total time to run one PD script: 0.482038
+
+2.Initialization stage:  0.106725
+
+3.Time to run each command in a script:
+the event name:socket,type:syscall,time_len: 0.006032
+the event name:setsockopt,type:syscall,time_len: 0.000947
+the event name:bind,type:syscall,time_len: 0.019239
+the event name:listen,type:syscall,time_len: 0.019854
+the event name:accept,type:syscall,time_len: 0.001010
+the event name:send,type:packet,time_len: 0.102062
+the event name:,type:packet,time_len: 0.016710
+the event name:send,type:packet,time_len: 0.105304
+the event name:send,type:packet,time_len: 0.095455
+
+4.Time to run a system call command:
+Function socket :
+a.Pre-processing stage: 0.000321
+b.Transmission stage:-1680571222.535913
+c.Execution stage:1680571222.540925
+d.Result processing stage: 0.000334
+Function setsockopt :
+a.Pre-processing stage: 0.000243
+b.Transmission stage:-1680571222.541749
+c.Execution stage:1680571222.541990
+d.Result processing stage: 0.000216
+Function bind :
+a.Pre-processing stage: 0.000205
+b.Transmission stage:-1680571222.542618
+c.Execution stage:1680571222.560946
+d.Result processing stage: 0.000499
+Function listen :
+a.Pre-processing stage: 0.000239
+b.Transmission stage:-1680571222.562064
+c.Execution stage:1680571222.580919
+d.Result processing stage: 0.000380
+Function accept :
+a.Pre-processing stage: 0.000441
+b.Transmission stage:-1680571222.582025
+c.Execution stage:1680571222.818629
+d.Result processing stage:-0.236320
+
+5.Time to run an inbound packet command
+a.Pre-processing stage:-1680571222.582479
+b.Packet waiting stage:1680571222.683964
+c.Packet processing stage: 0.000407
+a.Pre-processing stage:-1680571222.701323
+b.Packet waiting stage:1680571222.804928
+c.Packet processing stage: 0.001457
+a.Pre-processing stage:-1680571222.807986
+b.Packet waiting stage:1680571222.901465
+c.Packet processing stage: 0.000375
+a.Pre-processing stage: 0.000000
+b.Packet waiting stage: 0.000000
+c.Packet processing stage:1680571222.535227
+
+6.Time to run an outbound packet command
+
+7.Finalization Stage: 0.008700
+

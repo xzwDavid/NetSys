@@ -1,0 +1,292 @@
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept-fuzz.pkt run at the time: 2023/04/04 09:20:22
+Begin : 1680571222.428502
+next event syscall : 1680571222.535227
+socket syscall picked : 1680571222.535592
+socket syscall invoked : 1680571222.535913
+socket syscall returned : 1680571222.540925
+next event syscall : 1680571222.541259
+setsockopt syscall picked : 1680571222.541506
+setsockopt syscall invoked : 1680571222.541749
+setsockopt syscall returned : 1680571222.541990
+next event syscall : 1680571222.542206
+bind syscall picked : 1680571222.542413
+bind syscall invoked : 1680571222.542618
+bind syscall returned : 1680571222.560946
+next event syscall : 1680571222.561445
+listen syscall picked : 1680571222.561825
+listen syscall invoked : 1680571222.562064
+listen syscall returned : 1680571222.580919
+next event syscall : 1680571222.581299
+accept syscall picked : 1680571222.581584
+accept syscall invoked : 1680571222.582025
+next event packet : 1680571222.582309
+packet picked : 1680571222.582479
+done Packet send : 1680571222.683964
+next event packet : 1680571222.684371
+packet picked : 1680571222.684722
+net_dev called Packet : 1680571222.685219
+next event packet : 1680571222.701081
+packet picked : 1680571222.701323
+done Packet send : 1680571222.804928
+next event packet : 1680571222.806385
+packet picked : 1680571222.807986
+accept syscall returned : 1680571222.818629
+done Packet send : 1680571222.901465
+script end : 1680571222.901840
+net_dev called Packet : 1680571222.902368
+net_dev called Packet : 1680571222.910101
+End : 1680571222.910540
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/04 23:06:56
+Begin : 1680620816.809818
+next event syscall : 1680620816.917422
+socket syscall picked : 1680620816.917859
+socket syscall invoked : 1680620816.918282
+socket syscall returned : 1680620816.918906
+next event syscall : 1680620816.919163
+setsockopt syscall picked : 1680620816.919347
+setsockopt syscall invoked : 1680620816.919523
+setsockopt syscall returned : 1680620816.919723
+next event syscall : 1680620816.919922
+bind syscall picked : 1680620816.920140
+bind syscall invoked : 1680620816.920331
+bind syscall returned : 1680620816.920625
+next event syscall : 1680620816.920838
+listen syscall picked : 1680620816.921034
+listen syscall invoked : 1680620816.921219
+listen syscall returned : 1680620816.921535
+next event syscall : 1680620816.921700
+accept syscall picked : 1680620816.921864
+accept syscall invoked : 1680620816.922223
+next event packet : 1680620816.922425
+packet picked : 1680620816.922590
+done Packet send : 1680620817.27748
+next event packet : 1680620817.28026
+packet picked : 1680620817.28321
+net_dev called Packet : 1680620817.28585
+net_dev called Packet : 1680620817.28940
+net_dev called Packet : 1680620817.29195
+next event packet : 1680620817.62618
+packet picked : 1680620817.63044
+done Packet send : 1680620817.167659
+next event syscall : 1680620817.167990
+write syscall picked : 1680620817.168489
+accept syscall returned : 1680620817.926240
+write syscall invoked : 1680620817.926908
+write syscall returned : 1680620817.928603
+next event packet : 1680620817.929137
+packet picked : 1680620817.929474
+net_dev called Packet : 1680620817.930026
+next event packet : 1680620817.930902
+packet picked : 1680620817.931293
+done Packet send : 1680620818.31441
+next event syscall : 1680620818.32172
+read syscall picked : 1680620818.32717
+read syscall invoked : 1680620818.33337
+read syscall returned : 1680620818.234838
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/04 23:08:58
+Begin : 1680620938.54661
+next event syscall : 1680620938.165415
+socket syscall picked : 1680620938.165816
+socket syscall invoked : 1680620938.166318
+socket syscall returned : 1680620938.167012
+next event syscall : 1680620938.167224
+setsockopt syscall picked : 1680620938.167445
+setsockopt syscall invoked : 1680620938.167665
+setsockopt syscall returned : 1680620938.167860
+next event syscall : 1680620938.168059
+bind syscall picked : 1680620938.168262
+bind syscall invoked : 1680620938.168575
+bind syscall returned : 1680620938.168914
+next event syscall : 1680620938.169110
+listen syscall picked : 1680620938.169274
+listen syscall invoked : 1680620938.169455
+listen syscall returned : 1680620938.169853
+next event syscall : 1680620938.170095
+accept syscall picked : 1680620938.170294
+accept syscall invoked : 1680620938.170659
+next event packet : 1680620938.170964
+packet picked : 1680620938.171164
+done Packet send : 1680620938.276292
+next event packet : 1680620938.276665
+packet picked : 1680620938.277131
+net_dev called Packet : 1680620938.277410
+net_dev called Packet : 1680620938.277784
+next event packet : 1680620938.323965
+packet picked : 1680620938.324162
+done Packet send : 1680620938.426547
+next event syscall : 1680620938.426968
+write syscall picked : 1680620938.427217
+accept syscall returned : 1680620939.177122
+write syscall invoked : 1680620939.178141
+write syscall returned : 1680620939.180015
+next event packet : 1680620939.180537
+packet picked : 1680620939.181004
+net_dev called Packet : 1680620939.181401
+next event packet : 1680620939.181734
+packet picked : 1680620939.181886
+done Packet send : 1680620939.283189
+next event syscall : 1680620939.284007
+read syscall picked : 1680620939.284635
+read syscall invoked : 1680620939.285229
+read syscall returned : 1680620939.481695
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/04 23:13:56
+Begin : 1680621236.222913
+next event syscall : 1680621236.325364
+socket syscall picked : 1680621236.325822
+socket syscall invoked : 1680621236.326366
+socket syscall returned : 1680621236.327133
+next event syscall : 1680621236.327455
+setsockopt syscall picked : 1680621236.327718
+setsockopt syscall invoked : 1680621236.327874
+setsockopt syscall returned : 1680621236.328136
+next event syscall : 1680621236.328396
+bind syscall picked : 1680621236.328670
+bind syscall invoked : 1680621236.328922
+bind syscall returned : 1680621236.329328
+next event syscall : 1680621236.329583
+listen syscall picked : 1680621236.329772
+listen syscall invoked : 1680621236.329961
+listen syscall returned : 1680621236.330331
+next event syscall : 1680621236.330542
+accept syscall picked : 1680621236.330838
+accept syscall invoked : 1680621236.331219
+next event packet : 1680621236.331487
+packet picked : 1680621236.331687
+done Packet send : 1680621236.436760
+next event packet : 1680621236.437143
+packet picked : 1680621236.437530
+net_dev called Packet : 1680621236.437984
+net_dev called Packet : 1680621236.438251
+next event packet : 1680621236.524389
+packet picked : 1680621236.524827
+done Packet send : 1680621236.629493
+next event syscall : 1680621236.629827
+write syscall picked : 1680621236.630316
+accept syscall returned : 1680621237.336533
+write syscall invoked : 1680621237.338337
+write syscall returned : 1680621237.340147
+next event packet : 1680621237.340461
+packet picked : 1680621237.340672
+net_dev called Packet : 1680621237.340967
+next event packet : 1680621237.341587
+packet picked : 1680621237.341731
+done Packet send : 1680621237.441816
+next event syscall : 1680621237.442255
+read syscall picked : 1680621237.442755
+read syscall invoked : 1680621237.443185
+read syscall returned : 1680621237.695060
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/04 23:17:39
+Begin : 1680621459.962578
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/04 23:25:10
+Begin : 1680621910.904006
+next event syscall : 1680621911.5397
+socket syscall picked : 1680621911.5737
+socket syscall invoked : 1680621911.6067
+socket syscall returned : 1680621911.6831
+next event syscall : 1680621911.7252
+setsockopt syscall picked : 1680621911.7571
+setsockopt syscall invoked : 1680621911.7791
+setsockopt syscall returned : 1680621911.7997
+next event syscall : 1680621911.8171
+bind syscall picked : 1680621911.8337
+bind syscall invoked : 1680621911.8500
+bind syscall returned : 1680621911.8785
+next event syscall : 1680621911.8950
+listen syscall picked : 1680621911.9165
+listen syscall invoked : 1680621911.9434
+listen syscall returned : 1680621911.9824
+next event syscall : 1680621911.10004
+accept syscall picked : 1680621911.10173
+accept syscall invoked : 1680621911.10539
+next event packet : 1680621911.10778
+packet picked : 1680621911.10978
+done Packet send : 1680621911.116132
+next event packet : 1680621911.116488
+packet picked : 1680621911.116714
+net_dev called Packet : 1680621911.117046
+net_dev called Packet : 1680621911.117367
+next event packet : 1680621911.252276
+packet picked : 1680621911.252533
+done Packet send : 1680621911.357455
+next event syscall : 1680621911.357834
+write syscall picked : 1680621911.358133
+accept syscall returned : 1680621912.13361
+write syscall invoked : 1680621912.13715
+write syscall returned : 1680621912.14986
+next event packet : 1680621912.15239
+packet picked : 1680621912.15424
+net_dev called Packet : 1680621912.15707
+next event packet : 1680621912.16056
+packet picked : 1680621912.16227
+done Packet send : 1680621912.118978
+next event syscall : 1680621912.119319
+read syscall picked : 1680621912.119776
+read syscall invoked : 1680621912.120023
+read syscall returned : 1680621912.414851
+
+
+
+This scrip /media/psf/pd/packetdrill/gtests/net/tcp/blocking/blocking-accept.pkt run at the time: 2023/04/04 23:25:57
+Begin : 1680621957.46701
+next event syscall : 1680621957.145365
+socket syscall picked : 1680621957.145690
+socket syscall invoked : 1680621957.146302
+socket syscall returned : 1680621957.146992
+next event syscall : 1680621957.147242
+setsockopt syscall picked : 1680621957.147475
+setsockopt syscall invoked : 1680621957.147736
+setsockopt syscall returned : 1680621957.148010
+next event syscall : 1680621957.148221
+bind syscall picked : 1680621957.148422
+bind syscall invoked : 1680621957.148622
+bind syscall returned : 1680621957.148926
+next event syscall : 1680621957.149156
+listen syscall picked : 1680621957.149348
+listen syscall invoked : 1680621957.149533
+listen syscall returned : 1680621957.149887
+next event syscall : 1680621957.150074
+accept syscall picked : 1680621957.150255
+accept syscall invoked : 1680621957.150629
+next event packet : 1680621957.150888
+packet picked : 1680621957.151067
+done Packet send : 1680621957.253334
+next event packet : 1680621957.253658
+packet picked : 1680621957.254084
+net_dev called Packet : 1680621957.254367
+net_dev called Packet : 1680621957.254611
+next event packet : 1680621957.347271
+packet picked : 1680621957.347548
+done Packet send : 1680621957.452485
+next event syscall : 1680621957.452828
+write syscall picked : 1680621957.453327
+accept syscall returned : 1680621958.157934
+write syscall invoked : 1680621958.158246
+write syscall returned : 1680621958.159266
+next event packet : 1680621958.159507
+packet picked : 1680621958.159678
+net_dev called Packet : 1680621958.159954
+next event packet : 1680621958.160501
+packet picked : 1680621958.160696
+done Packet send : 1680621958.265742
+next event syscall : 1680621958.266179
+read syscall picked : 1680621958.266719
+read syscall invoked : 1680621958.266978
+read syscall returned : 1680621958.492145
